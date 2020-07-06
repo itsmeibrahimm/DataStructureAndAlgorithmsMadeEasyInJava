@@ -15,7 +15,7 @@
 package chapter21miscconcepts;
 
 public class CountNumberofSetbitsin1toN {
-	public int countNumberofSetbitsin1toN(int n) {
+	public long countNumberofSetbitsin1toN(int n) {
 		long i = 0, j, count = 0; 
 		for (i = 1; i<=n; i++){
 			j = i;

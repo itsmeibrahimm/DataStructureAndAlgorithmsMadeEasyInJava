@@ -13,7 +13,8 @@
 package chapter15stringalgorithms;
 
 public class ReverseWordsinaSentence {
-    public String reverseWords(String s) {
+	
+    public static String reverseWords(String s) {
         if (s == null || s.length() == 0)
 			return "";
 		int curr = 0, start = 0;
@@ -40,7 +41,8 @@ public class ReverseWordsinaSentence {
 		}
 		return sb.length() != 0 ? sb.toString().substring(0, sb.length() - 1) : "";
     }
-    public String reverse(String s) {
+    
+    public static String reverse(String s) {
         if (s == null || s.length() == 0)
 			return "";
 		int length = s.length(), last = length - 1;
@@ -50,6 +52,11 @@ public class ReverseWordsinaSentence {
 			chars[i] = chars[last - i];
 			chars[last - i] = c;
 		}
+		System.out.println("chars from reverse: "+new String(chars));
 		return new String(chars);
+    }
+    
+    public static void main(String[] args){
+    	System.out.println(ReverseWordsinaSentence.reverseWords("This is    a sample sentence"));
     }
 }

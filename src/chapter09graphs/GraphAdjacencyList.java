@@ -10,6 +10,7 @@
  * 							merchantability or fitness for a particular purpose. 
  * 
  */
+package chapter09graphs;
 
 import java.io.*;
 import java.util.*;
@@ -68,7 +69,7 @@ class LinkedList<Integer> implements Iterable<Integer> {
         }
     }
 }
-public class Graph {
+public class GraphAdjacencyList {
     private static final String NEWLINE = System.getProperty("line.separator");
 
     private final int V;
@@ -76,7 +77,7 @@ public class Graph {
     private LinkedList<Integer>[] adjList;
 
     // Initializes an empty graph with V vertices and 0 edges.
-    public Graph(int V) {
+    public GraphAdjacencyList(int V) {
         if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
         this.V = V;
         this.E = 0;
@@ -87,7 +88,7 @@ public class Graph {
     }
 
     // random graph with V vertices and E edges
-    public Graph(int V, int E) {
+    public GraphAdjacencyList(int V, int E) {
         this(V);
         if (E > (long) V*(V-1)/2 + V) throw new IllegalArgumentException("Too many edges");
         if (E < 0)                    throw new IllegalArgumentException("Too few edges");
@@ -103,7 +104,7 @@ public class Graph {
 
 
     // Initializes a new graph.
-    public Graph(Graph G) {
+    public GraphAdjacencyList(GraphAdjacencyList G) {
         this(G.V());
         this.E = G.E();
         for (int u = 0; u < G.V(); u++) {
@@ -170,7 +171,7 @@ public class Graph {
 
     // test code
     public static void main(String[] args) {
-        Graph G = new Graph(5, 7);
+    	GraphAdjacencyList G = new GraphAdjacencyList(5, 7);
         System.out.println(G.toString());
     }
 
